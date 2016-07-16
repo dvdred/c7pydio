@@ -1,0 +1,29 @@
+version: '2'
+services:
+  db:
+    image: mysql:latest
+    volumes:
+      - "./data/db:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "!NadmSrt03!"
+      MYSQL_DATABASE: pydiodb
+      MYSQL_USER: pydiouser
+      MYSQL_PASSWORD: "!CadmSrt03!"
+
+  web:
+    build: pydio
+    links:
+      - db:dbserver
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - "./pydio/etc/httpd/conf:/etc/httpd/conf"
+      - "./pydio/etc/httpd/conf.d:/etc/httpd/conf.d"
+      - "./pydio/etc/pydio:/etc/pydio"
+      - "./data/running-app/pydio:/var/lib/pydio/plugins/boot.conf"
+      - "./data/running-app/cache:/var/cache/pydio/"
+
+#     - /DATA/SAMBA:
+#     - /DATA2/ALTRO:
