@@ -13,14 +13,17 @@ services:
 
   web:
     build: pydio
+    environment:
+      SERVERNAME: "yourservername"
     links:
       - db:dbserver
     ports:
       - "8080:80"
-      - "8443:443"
+      - "8443:8443"
     volumes:
       - "./pydio/etc/httpd/conf:/etc/httpd/conf"
       - "./pydio/etc/httpd/conf.d:/etc/httpd/conf.d"
+      - "./pydio/etc/httpd/ssl.crt:/etc/httpd/ssl.crt"
       - "./pydio/etc/pydio:/etc/pydio"
       - "./data/running-app/pydio:/var/lib/pydio/plugins/boot.conf"
       - "./data/running-app/cache:/var/cache/pydio/"
