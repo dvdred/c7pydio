@@ -24,6 +24,6 @@ services:
       - "./pydio/etc/pydio:/etc/pydio"
       - "./data/running-app/pydio:/var/lib/pydio/plugins/boot.conf"
       - "./data/running-app/cache:/var/cache/pydio/"
-
-#     - /DATA/SAMBA:
-#     - /DATA2/ALTRO:
+      - "./data/files:/var/lib/pydio/files/"
+      - "./data/personal:/var/lib/pydio/personal"
+      - "./data/public:/var/lib/pydio/public"
