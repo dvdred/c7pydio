@@ -6,10 +6,10 @@ services:
       - "./data/db:/var/lib/mysql"
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: "!NadmSrt03!"
+      MYSQL_ROOT_PASSWORD: "!changeit!"
       MYSQL_DATABASE: pydiodb
       MYSQL_USER: pydiouser
-      MYSQL_PASSWORD: "!CadmSrt03!"
+      MYSQL_PASSWORD: "changeit"
 
   web:
     build: pydio
