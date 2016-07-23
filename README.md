@@ -30,7 +30,7 @@ privkey.pem
 fullchain.pem (To use it, uncomment the relative option in pydio/etc/httpd/conf.d/pydio.conf) 
 ```
 
-- IF you don't include any certificates, the starting script will create one for you (self signed).
+- IF you don't include any certificates, the starting script will generate one for you (self signed).
 To set a server name modify the default "yourservername" in docker-compose.yml file **before first run**.
 
 - If you want a working redirect from base url to the application (default es: http:/yourservername:8080 -> https:/yourservername:8443/pydio ), fill the right server name (the same in the docker-compose.yml) in pydio/etc/httpd/conf.d/pydio.conf
