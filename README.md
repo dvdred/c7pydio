@@ -1,6 +1,17 @@
 # c7pydio
 Pydio containerized on CentOS 7 and Apache (with persistent data)
 
+## NB: Problems with Ubuntu 14.04 and other derivated distro, with aufs backend storage driver for docker:
+More explanation at https://github.com/docker/docker/issues/6980
+
+**WARNING**: NEXT STEPS WILL OVERRIDE ANY EXISTING IMAGES AND CONTAINER,
+- Change the default storage backend driver is needed for that annoying bug. You can uncomment or add the following properties to the /etc/default/docker configuration file:
+```
+DOCKER_OPTS="--storage-driver=overlay"
+```
+- and the restart the docker daemon:
+``` sudo service docker restart ```
+
 ## CONFIGURATION
 
 NB: INCLUDE YOUR OWN CERTIFICATES FOR HTTPS BEFORE TO START THE DOCKER COMPOSITION
