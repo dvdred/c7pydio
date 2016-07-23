@@ -47,6 +47,11 @@ Credential: look at PASSWORD.TXT file
 ```
 
 ## PERSISTENT DATA (what I have to backup?)
-All data are persistent for default: 
-- "./data" folder present at the root of this projects will contains the database, the configuration and the media files of this composition. If you have problems with folder permissions, it is possible to make ./data writeable for all, recursively:
+All data are persistent for default.
+Backup the next folder and docker-compose.yml for preservation purpose: 
+- "./data" folder present at the root of this projects will contains the database, the configuration of the running application and the media files of this composition.
+- "./pydio/etc/" contains the configuration of the application and apache server. It contains the ssl certificate.
+
+## Permission problems:
+- If you have problems with folder permissions, it is possible to make ./data writeable for all, recursively as workaround:
 ``` chmod -R a+rw ./data ```
