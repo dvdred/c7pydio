@@ -38,7 +38,15 @@ To set a server name modify the default "yourservername" in docker-compose.yml f
 ## ONCE STARTED: (docker-compose up -d)
 
 - Point your browser to https://yourservername or ip:8443/pydio
-First time the installation process will start. Use the following information (defalt settings):
+First time the installation process will start. Use the following information (default settings, you can change in the docker-compose.yml file):
 ```
+Database url: dbserver
+Database name: pydiodb
+Database user: pydiouser
+Credential: look at PASSWORD.TXT file
 ```
-- For the credential of database user look at the ``` PASSWORD.txt ``` file for default settings or modify them in ``` docker-compose.yml ```
+
+## PERSISTENT DATA (what I have to backup?)
+All data are persistent for default: 
+- "./data" folder present at the root of this projects will contains the database, the configuration and the media files of this composition. If you have problems with folder permissions, it is possible to make ./data writeable for all, recursively:
+``` chmod -R a+rw ./data ```
