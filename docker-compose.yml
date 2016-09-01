@@ -25,6 +25,7 @@ services:
       - "./pydio/etc/httpd/conf.d:/etc/httpd/conf.d"
       - "./pydio/etc/httpd/ssl.crt:/etc/httpd/ssl.crt"
       - "./pydio/etc/pydio:/etc/pydio"
+      - "./pydio/etc/php.ini:/etc/php.ini"
       - "./data/running-app/pydio:/var/lib/pydio/plugins/boot.conf"
       - "./data/running-app/cache:/var/cache/pydio/"
       - "./data/files:/var/lib/pydio/files/"
